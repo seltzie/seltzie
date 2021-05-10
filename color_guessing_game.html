@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Color Guessing Game</title>
+        <link rel="stylesheet" href="css/color_guessing_game.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">   
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+</head>
+    <body>
+    <div id="game">
+        <h1>Color Guessing Game</h1>
+        <button type="button" onclick = runGame()>Start Game</button>
+    </div>
+        <script>
+            //here's where i set the array
+            const COLORS_ARRAY = ['azure', 'goldenrod', 'honeydew', 'khaki', 'linen', 'seashell', 'peru', 'teal', 'silver', 'thistle'];
+            COLORS_ARRAY.sort();
+            //this function is what happens when you click the button.
+            function runGame() {
+                let guess = '';
+                let correct = false;
+                let numTries = 1;
+
+                const targetIndex = Math.floor(Math.random() * COLORS_ARRAY.length);
+                const target = COLORS_ARRAY[targetIndex];
+                //ask the number, trim the answer and coerce to lower case, give warning if they cancel out/null, add a try to number of attempts and decide if the guess is right
+                do {
+                    guess = prompt('Attempt number: ' + numTries + '\n\nI am thinking of one of these colors:\n\n' + COLORS_ARRAY.join(', ') + '\n\nWhat color am I thinking of?\n');
+                    guess = guess.trim();
+                    guess = guess.toLowerCase();
+                    if (guess === null) {
+                        alert('Fine, we do not have to play if you do not want to.');
+                        return
+                    }  
+                
+                numTries += 1;
+                correct = checkGuess(guess, target);
+
+                } while (!correct);
+
+                numTries = numTries - 1;
+                alert('You got it! And it only took you ' + numTries + ' attempt(s).');
+                document.body.style.background = guess;
+                }
+            
+            //get the guess from the prompt in runGame, ask some questions about the guess and send it back to runGame when it is correct
+            function checkGuess(guess, target) {
+                let correct = false;
+
+                if (COLORS_ARRAY.indexOf(guess) === -1) {
+                    alert("That wasn't even an option.");
+                } else if (guess > target) {
+                    alert("Try closer to the start of the alphabet.");
+                } else if (guess < target) {
+                    alert("Try closer to the end of the alphabet.");
+                } else {
+                    correct = true;
+                }    
+                return correct; 
+                }
+
+        </script>
+    </body>
+</html>
