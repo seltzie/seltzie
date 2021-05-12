@@ -23,5 +23,5 @@ function rollDice() {
         goldCoins += roll;
         }
         alert('You won a total of ' + goldCoins + '. You might want to put them in your satchel before the necromancer snatches them.');
-        document.body.style.backgroundImage = "url('images/necromancer.png')";
+        document.body.style.backgroundImage = "url('necromancer.png')";
     }
