@@ -2,7 +2,7 @@ html,body,blockquote,code,h1,h2,h3,h4,h5,h6,p,pre{margin:0;padding:0}
 
 #body {
     width: 700px;
-    background-image: url('../images/cowboy.jpg');
+    background-image: url('cowboy.jpg');
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
