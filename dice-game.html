@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>GiddyUp! A Dice Game</title>
+    <link rel="stylesheet" href="css/dice-game.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Rye&display=swap" rel="stylesheet">
+</head>
+<body id="body">
+    <div id="game">
+        <h1>GiddyUp!</h1>
+        <h2>A Dice Game</h2>
+        <h3>Rules:</h3>
+        <ul>
+            <li>When you click the <span id="gambleText">Take a Gamble!</span> button, you will roll a die, up to 10 times. 
+            <li>If you roll a 1, the game is over.</li>
+            <li>2 or 3 gets you nothing but another roll.</li>
+            <li>Unlucky 4! When you roll a 4, you have to tip your server.</li>
+            <li>5 wins 5 gold ducats and another roll.</li>
+            <li>6 wins you 6 gold and another roll.</li>
+        </ul>
+        <p>And remember,<br>don't let your yearnings get ahead of your earnings.</p>
+        <button type="button" onclick="rollDice()">Take a Gamble!</button>
+    </div>
+    <script src="js/dice-game.js"></script>
+</body>
+</html>
